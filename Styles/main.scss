@@ -1,0 +1,463 @@
+// Imprted files
+
+@use "../Styles/VM.scss" as *;
+
+// Global
+
+::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $accentColor_1;
+}
+
+::-webkit-scrollbar-track {
+  background-color: $primaryColor_1;
+}
+
+::selection {
+  background-color: $accentColor_1;
+  color: white;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.8;
+}
+
+i,
+a,
+button {
+  cursor: pointer;
+}
+
+p {
+  max-width: 400px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include min-mq($mq) {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+
+// Components
+
+.container {
+  margin: auto;
+  padding: 0 1em;
+
+  @include min-mq(800px) {
+    width: 90%;
+  }
+
+  @include min-mq(1300px) {
+    width: 1250px;
+  }
+}
+
+.light-text {
+  color: $primaryColor_1;
+  font-weight: 400;
+
+}
+
+.grayish-text {
+  color: $primaryColor_2;
+}
+
+// Header
+
+header {
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2em;
+    padding-bottom: 1em;
+
+    img {
+      width: 100px;
+    }
+
+    ul {
+      li {
+        display: inline;
+        margin-left: 1em;
+        font-size: .8rem;
+        letter-spacing: .5px;
+      }
+    }
+  }
+}
+
+// main
+
+main {
+  section {
+    padding-top: 3em;
+    padding-bottom: 3em;
+    text-align: center;
+
+    h1,
+    h2 {
+      color: $primaryColor_1;
+
+      margin: {
+        top: 4em;
+        bottom: 1em;
+      }
+    }
+
+    h2 {
+      font-family: 'Raleway', sans-serif;
+    }
+
+    p {
+      font-size: .9rem;
+      margin-bottom: 1.5em;
+    }
+
+    form {
+      max-width: 300px;
+      margin-right: auto;
+      margin-left: auto;
+      position: relative;
+
+      input {
+        width: 100%;
+        padding: 1em;
+        border: 1px solid $primaryColor_2;
+        margin-bottom: 1em;
+        transition-duration: .5s;
+
+        &::placeholder {
+          color: $neutralColor_2;
+        }
+
+        &:invalid {
+          border-color: #f697a7;
+
+          +p {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+      }
+
+      p {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        top: calc(100% + .5em);
+        left: 0;
+        color: #f697a7;
+        transition-duration: .5s;
+      }
+
+      button {
+        width: 100%;
+        background-color: $accentColor_1;
+        color: white;
+        padding: 1em;
+        text-transform: capitalize;
+        transition-duration: .5s;
+
+        &:hover {
+          opacity: .7;
+        }
+      }
+    }
+
+    .container {
+      @include min-mq($mq) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2em;
+        text-align: left;
+
+        h1 {
+          font-size: 2.3rem;
+        }
+
+        h2 {
+          font-size: 2rem;
+        }
+
+        img {
+          order: 2;
+        }
+
+        form {
+          margin-right: 0;
+          margin-left: 0;
+
+          &.illus-1-form {
+            display: flex;
+            gap: 1em;
+
+            input {
+              flex-basis: 60%;
+              margin-bottom: 0;
+            }
+
+            button {
+              flex-basis: 40%;
+            }
+          }
+
+          &.signing-form {
+            button {
+              width: max-content;
+            }
+          }
+        }
+      }
+    }
+
+
+    &.illustration-2 {
+
+      background-color: #F8F8FE;
+      background-clip: content-box;
+      margin-top: 15em;
+      padding-top: 0;
+      padding-bottom: 0;
+
+      >img.decorative {
+        position: absolute;
+        right: 0;
+        $height: 125px;
+        max-width: 100%;
+        height: $height;
+        @include prefix(transform, translateY(-$height))
+      }
+
+      .container {
+
+        padding: {
+          top: 2em;
+          bottom: 3em
+        }
+
+        p {
+          text-align: left;
+          color: $primaryColor_1
+        }
+
+        h3 {
+          font-size: 1rem;
+        }
+
+        >.text-box a {
+          display: block;
+          width: max-content;
+          margin: 2em auto 3em;
+          color: $accentColor_2;
+          padding: .5em;
+          border-bottom: 1.5px solid $accentColor_2;
+          transition-duration: .5s;
+
+          &:hover {
+            filter: brightness(1.3)
+          }
+
+          span {
+            @include circle(30px);
+            padding: .4em;
+            background-color: $accentColor_2;
+            color: white;
+          }
+
+          @include min-mq(1000px) {
+            margin-left: 0;
+          }
+        }
+
+      }
+
+      blockquote {
+        max-width: 400px;
+        margin-right: auto;
+        margin-left: auto;
+        @include prefix(border-radius, 10px);
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        padding: 1em 2em;
+        box-shadow: 0 0 5px $neutralColor_2;
+        background-color: white;
+        color: black;
+
+        @include min-mq(1000px) {
+          margin-left: 0;
+        }
+
+        >div {
+          display: flex;
+          align-items: center;
+          gap: 1em;
+
+          img {
+            @include circle(40px);
+          }
+
+          span {
+            display: block;
+            text-align: left;
+
+            &:first-child {
+              color: $primaryColor_1;
+              font-weight: 700;
+            }
+
+            &:last-child {
+              font-size: .8em;
+            }
+          }
+        }
+      }
+    }
+
+    &.signing {
+      background-color: $primaryColor_2;
+
+      h2 {
+        color: white;
+        margin-top: 0;
+      }
+
+      p {
+        color: $neutralColor_1;
+        margin-top: 1em;
+        margin-bottom: 2.5em;
+      }
+    }
+  }
+}
+
+// Footer
+
+footer {
+  background-color: $primaryColor_1;
+  padding-top: 4em;
+  padding-bottom: 4em;
+  color: $neutralColor_1;
+
+  svg {
+    margin-bottom: 2em;
+  }
+
+  svg>g>path,
+  svg>g>g>path {
+    fill: white;
+  }
+
+  .container {
+    padding-right: 2em;
+    padding-left: 2em;
+  }
+
+  .container.flex {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+
+    .col-1 {
+
+      .contact-box address {
+        display: flex;
+        gap: .5em;
+        font-style: normal;
+        margin-bottom: 1.5em;
+
+        img {
+          width: 25px;
+        }
+      }
+    }
+
+    .col-2 {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+
+      a {
+        display: block;
+        color: $neutralColor_1;
+        padding: .3em;
+        text-transform: capitalize;
+        transition-duration: .5s;
+
+        &:hover {
+          color: $hoverColor;
+        }
+      }
+    }
+
+    .col-3 ul {
+      width: max-content;
+      margin-right: auto;
+      margin-left: auto;
+      display: flex;
+      gap: .5em;
+      padding-top: 1.5em;
+
+      a {
+        color: white;
+        padding: .5em;
+        border-radius: 50%;
+        border: 1px solid white;
+        transition-duration: .5s;
+
+        &:hover {
+          border-color: $hoverColor;
+          color: $hoverColor;
+        }
+      }
+    }
+
+    @include min-mq(700px) {
+      flex-direction: row;
+      justify-content: space-between;
+
+      .col-2 {
+        flex-direction: row;
+        gap: 6em;
+      }
+    }
+  }
+}

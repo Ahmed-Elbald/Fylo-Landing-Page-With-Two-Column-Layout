@@ -1,0 +1,394 @@
+::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #3065f8;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #070439;
+}
+
+::selection {
+  background-color: #3065f8;
+  color: white;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.8;
+}
+
+i,
+a,
+button {
+  cursor: pointer;
+}
+
+p {
+  max-width: 400px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 1000px) {
+  p {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+.container {
+  margin: auto;
+  padding: 0 1em;
+}
+@media (min-width: 800px) {
+  .container {
+    width: 90%;
+  }
+}
+@media (min-width: 1300px) {
+  .container {
+    width: 1250px;
+  }
+}
+
+.light-text {
+  color: #070439;
+  font-weight: 400;
+}
+
+.grayish-text {
+  color: #585989;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2em;
+  padding-bottom: 1em;
+}
+header .container img {
+  width: 100px;
+}
+header .container ul li {
+  display: inline;
+  margin-left: 1em;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+}
+
+main section {
+  padding-top: 3em;
+  padding-bottom: 3em;
+  text-align: center;
+}
+main section h1,
+main section h2 {
+  color: #070439;
+  margin-top: 4em;
+  margin-bottom: 1em;
+}
+main section h2 {
+  font-family: "Raleway", sans-serif;
+}
+main section p {
+  font-size: 0.9rem;
+  margin-bottom: 1.5em;
+}
+main section form {
+  max-width: 300px;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+}
+main section form input {
+  width: 100%;
+  padding: 1em;
+  border: 1px solid #585989;
+  margin-bottom: 1em;
+  transition-duration: 0.5s;
+}
+main section form input::placeholder {
+  color: #bfbfbf;
+}
+main section form input:invalid {
+  border-color: #f697a7;
+}
+main section form input:invalid + p {
+  visibility: visible;
+  opacity: 1;
+}
+main section form p {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: calc(100% + 0.5em);
+  left: 0;
+  color: #f697a7;
+  transition-duration: 0.5s;
+}
+main section form button {
+  width: 100%;
+  background-color: #3065f8;
+  color: white;
+  padding: 1em;
+  text-transform: capitalize;
+  transition-duration: 0.5s;
+}
+main section form button:hover {
+  opacity: 0.7;
+}
+@media (min-width: 1000px) {
+  main section .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2em;
+    text-align: left;
+  }
+  main section .container h1 {
+    font-size: 2.3rem;
+  }
+  main section .container h2 {
+    font-size: 2rem;
+  }
+  main section .container img {
+    order: 2;
+  }
+  main section .container form {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  main section .container form.illus-1-form {
+    display: flex;
+    gap: 1em;
+  }
+  main section .container form.illus-1-form input {
+    flex-basis: 60%;
+    margin-bottom: 0;
+  }
+  main section .container form.illus-1-form button {
+    flex-basis: 40%;
+  }
+  main section .container form.signing-form button {
+    width: max-content;
+  }
+}
+main section.illustration-2 {
+  background-color: #F8F8FE;
+  background-clip: content-box;
+  margin-top: 15em;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+main section.illustration-2 > img.decorative {
+  position: absolute;
+  right: 0;
+  max-width: 100%;
+  height: 125px;
+  transform: translateY(-125px);
+  -webkit-transform: translateY(-125px);
+  -moz-transform: translateY(-125px);
+  -ms-transform: translateY(-125px);
+  -o-transform: translateY(-125px);
+}
+main section.illustration-2 .container {
+  padding-top: 2em;
+  padding-bottom: 3em;
+}
+main section.illustration-2 .container p {
+  text-align: left;
+  color: #070439;
+}
+main section.illustration-2 .container h3 {
+  font-size: 1rem;
+}
+main section.illustration-2 .container > .text-box a {
+  display: block;
+  width: max-content;
+  margin: 2em auto 3em;
+  color: #3c9f8f;
+  padding: 0.5em;
+  border-bottom: 1.5px solid #3c9f8f;
+  transition-duration: 0.5s;
+}
+main section.illustration-2 .container > .text-box a:hover {
+  filter: brightness(1.3);
+}
+main section.illustration-2 .container > .text-box a span {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  padding: 0.4em;
+  background-color: #3c9f8f;
+  color: white;
+}
+@media (min-width: 1000px) {
+  main section.illustration-2 .container > .text-box a {
+    margin-left: 0;
+  }
+}
+main section.illustration-2 blockquote {
+  max-width: 400px;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 1em 2em;
+  box-shadow: 0 0 5px #bfbfbf;
+  background-color: white;
+  color: black;
+}
+@media (min-width: 1000px) {
+  main section.illustration-2 blockquote {
+    margin-left: 0;
+  }
+}
+main section.illustration-2 blockquote > div {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+main section.illustration-2 blockquote > div img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+main section.illustration-2 blockquote > div span {
+  display: block;
+  text-align: left;
+}
+main section.illustration-2 blockquote > div span:first-child {
+  color: #070439;
+  font-weight: 700;
+}
+main section.illustration-2 blockquote > div span:last-child {
+  font-size: 0.8em;
+}
+main section.signing {
+  background-color: #585989;
+}
+main section.signing h2 {
+  color: white;
+  margin-top: 0;
+}
+main section.signing p {
+  color: #f6f6fe;
+  margin-top: 1em;
+  margin-bottom: 2.5em;
+}
+
+footer {
+  background-color: #070439;
+  padding-top: 4em;
+  padding-bottom: 4em;
+  color: #f6f6fe;
+}
+footer svg {
+  margin-bottom: 2em;
+}
+footer svg > g > path,
+footer svg > g > g > path {
+  fill: white;
+}
+footer .container {
+  padding-right: 2em;
+  padding-left: 2em;
+}
+footer .container.flex {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+footer .container.flex .col-1 .contact-box address {
+  display: flex;
+  gap: 0.5em;
+  font-style: normal;
+  margin-bottom: 1.5em;
+}
+footer .container.flex .col-1 .contact-box address img {
+  width: 25px;
+}
+footer .container.flex .col-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+footer .container.flex .col-2 a {
+  display: block;
+  color: #f6f6fe;
+  padding: 0.3em;
+  text-transform: capitalize;
+  transition-duration: 0.5s;
+}
+footer .container.flex .col-2 a:hover {
+  color: #3dabff;
+}
+footer .container.flex .col-3 ul {
+  width: max-content;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  gap: 0.5em;
+  padding-top: 1.5em;
+}
+footer .container.flex .col-3 ul a {
+  color: white;
+  padding: 0.5em;
+  border-radius: 50%;
+  border: 1px solid white;
+  transition-duration: 0.5s;
+}
+footer .container.flex .col-3 ul a:hover {
+  border-color: #3dabff;
+  color: #3dabff;
+}
+@media (min-width: 700px) {
+  footer .container.flex {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  footer .container.flex .col-2 {
+    flex-direction: row;
+    gap: 6em;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
